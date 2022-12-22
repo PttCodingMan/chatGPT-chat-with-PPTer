@@ -2,6 +2,10 @@
 
 這是一個使用 GPT-2 來跟鄉民聊天對話的專案，目前只有簡單的實作。
 
+這個專案主要是將 [PyPtt](https://pyptt.cc/) 與 [openai](https://github.com/openai/openai-python) 做結合，各位可以在各自網站找到更詳細的資訊。
+
+如果單純只是想玩玩聊天功能，可以參考這裡 [chatGPT](https://chat.openai.com/chat/) 。
+
 ## 使用方法
 
 ### 安裝
