@@ -35,10 +35,11 @@ def clear_signature(text: str):
 
 # 将输入的文本发送给 chatGPT，并将结果输出到屏幕上
 def chat(text):
-
     text = f"""你現在扮演一個只會説一句話以內的大學生，正在使用繁體中文與網友說話。請回覆以下句子「{text}」"""
 
+    # about create completion: https://beta.openai.com/docs/api-reference/completions/create
     completions = openai.Completion.create(
+        # you can get more engine info from https://beta.openai.com/docs/models/gpt-3
         engine="text-davinci-003",
         prompt=text,
         max_tokens=512,
@@ -138,7 +139,8 @@ if __name__ == '__main__':
 
                 logger.info(f'推文', response)
 
-                ptt_bot.comment(board=board, comment_type=PyPtt.CommentType.ARROW, index=current_index - index, content=response)
+                ptt_bot.comment(board=board, comment_type=PyPtt.CommentType.ARROW, index=current_index - index,
+                                content=response)
 
         finally:
             ptt_bot.logout()
@@ -146,4 +148,3 @@ if __name__ == '__main__':
             # break for demo
             # 如果你想一直執行就拿掉，記得記錄一下回過的文 :D
             break
-
